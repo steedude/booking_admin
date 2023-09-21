@@ -1,3 +1,5 @@
-import useConfigStore from '@/stores/modules/config';
+import useUserStore from '@/stores/modules/user';
+import useRoomStateStore from '@/stores/modules/roomStateStore';
+import useRoomReserveStore from '@/stores/modules/roomReserveStore';
 
-export { useConfigStore };
+export { useUserStore, useRoomStateStore, useRoomReserveStore };

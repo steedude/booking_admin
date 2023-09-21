@@ -1,16 +1,26 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import IndexPage from '@/pages/IndexPage.vue';
+import ManagePage from '@/pages/ManagePage.vue';
+import ReservePage from '@/pages/ReservePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:catchAll(.*)',
-    redirect: '/',
+    redirect: '/managePage',
   },
   {
-    path: '/',
-    component: IndexPage,
+    path: '/managePage',
+    name: 'ManagePage',
+    component: ManagePage,
     meta: {
-      title: 'Vue3 Coding Standards',
+      title: 'ManagePage',
+    },
+  },
+  {
+    path: '/reservePage',
+    component: ReservePage,
+    name: 'reservePage',
+    meta: {
+      title: 'ReservePage',
     },
   },
 ];
