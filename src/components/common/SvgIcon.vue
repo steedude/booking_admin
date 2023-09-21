@@ -1,3 +1,15 @@
+<template>
+  <svg
+    aria-hidden="true"
+    :title="symbolId"
+  >
+    <use
+      :href="symbolId"
+      :fill="color"
+    />
+  </svg>
+</template>
+
 <script setup lang="ts">
 import { computed } from 'vue';
 
@@ -15,15 +27,3 @@ const props = withDefaults(defineProps<Props>(), {
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 </script>
-
-<template>
-  <svg
-    aria-hidden="true"
-    :title="symbolId"
-  >
-    <use
-      :href="symbolId"
-      :fill="color"
-    />
-  </svg>
-</template>

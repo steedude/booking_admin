@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import HelloWorld from '@/components/indexPage/HelloWorld.vue';
-</script>
-
 <template>
   <div>
     <a
@@ -24,11 +20,18 @@ import HelloWorld from '@/components/indexPage/HelloWorld.vue';
       />
     </a>
   </div>
+  <el-button>Test EL Button</el-button>
   <hello-world msg="Vite + Vue" />
 </template>
 
+<script setup lang="ts">
+import HelloWorld from '@/components/indexPage/HelloWorld.vue';
+import { ElButton } from 'element-plus';
+</script>
+
 <style lang="postcss" scoped>
 .logo {
-  @apply w-24 h-24 p-6 mx-auto will-change-[filter] transition-[filter] duration-300 hover:drop-shadow-[0_0_2em_#646cffaa];
+  @apply w-24 h-24 p-6 mx-auto will-change-[filter] transition-[filter]
+  duration-300 hover:drop-shadow-[0_0_2em_#646cffaa];
 }
 </style>

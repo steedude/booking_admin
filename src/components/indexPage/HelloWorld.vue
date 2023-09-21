@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useConfigStore } from '@/stores';
-
-defineProps<{ msg: string }>();
-
-const { locale } = useI18n();
-const { version } = useConfigStore();
-const count = ref(0);
-
-function changeLocale() {
-  locale.value = locale.value === 'en-US' ? 'zh-TW' : 'en-US';
-}
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -47,6 +31,22 @@ function changeLocale() {
   <p class="read-the-docs">{{ version }}</p>
   <button @click="changeLocale">{{ $t('language') }}</button>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useConfigStore } from '@/stores';
+
+defineProps<{ msg: string }>();
+
+const { locale } = useI18n();
+const { version } = useConfigStore();
+const count = ref(0);
+
+function changeLocale() {
+  locale.value = locale.value === 'en-US' ? 'zh-TW' : 'en-US';
+}
+</script>
 
 <style lang="postcss" scoped>
 .read-the-docs {

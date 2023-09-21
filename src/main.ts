@@ -7,6 +7,7 @@ import '@/styles/tailwind.postcss';
 import '@/styles/index.postcss';
 import App from './App.vue';
 import router from '@/router';
+import elementPlusPlugin from '@/plugins/elementPlus';
 import i18NPlugin from '@/plugins/i18n';
 
 if (process.env.NODE_ENV === 'mockServiceWorker') {
@@ -21,5 +22,6 @@ const app = createApp(App);
 pinia.use(piniaPluginPersistedstate);
 app.use(pinia);
 app.use(router);
+app.use(elementPlusPlugin);
 app.use(i18NPlugin);
 app.mount('#app');

@@ -18,12 +18,14 @@
 - [Vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons) generate svg sprite map
 - [Unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components) auto importing for common components
 - Eslint
+  - [config airbnb](https://www.npmjs.com/package/eslint-config-airbnb-base)
 - Prettier
 - [Husky](https://www.npmjs.com/package/husky) to improves commits
   - if encounter npx: command not found, can execute `ln -s $(which npx) /usr/local/bin/npx` in zsh
   - [commitlint](https://commitlint.js.org/#/) checks if your commit messages meet the conventional commit format
   - [lint-staged](https://github.com/okonet/lint-staged) filter files checked by pre commit lint
 - Alias `@` to `<project_root>/src`
+- UI Library use [Element Plus](https://element-plus.org/#/en-US)
 - Mock use [msw](https://mswjs.io/)
   - `npx msw init ./public`
 - Unit test use [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/)
@@ -33,6 +35,7 @@
   - [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro/)
   - [@testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/)
 - E2E test use [playwright](https://playwright.dev/)
+  - `npx playwright install`
 - Predefined and fully typed global variables:
   - `VITE_APP_VERSION` is read from `package.json` version at build time
   - `VITE_APP_BUILD_EPOCH` is populated as `new Date().getTime()` at build time
