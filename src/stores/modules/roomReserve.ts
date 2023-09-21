@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
+import axios from 'axios';
 
-export default defineStore('roomReserveStore', () => {
+export default defineStore('roomReserve', () => {
   // 預約Array
   const reserveList: any = [];
 
@@ -8,6 +9,9 @@ export default defineStore('roomReserveStore', () => {
   async function getReservations() {
     // GET /api/admin/reservations
     console.log('getReservations');
+    const data: any = await axios.get('/api/admin/reservations');
+    console.log(data);
+    return reserveList;
   }
 
   // 取消預約

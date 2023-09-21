@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
+import axios from 'axios';
 
-export default defineStore('roomStateStore', () => {
+export default defineStore('roomState', () => {
   // 會議室Array
   const roomList: any = [];
 
@@ -8,6 +9,9 @@ export default defineStore('roomStateStore', () => {
   async function getRoomList() {
     // GET /api/admin/products
     console.log('getRoomList');
+    const data: any = await axios.get('/api/admin/products');
+    console.log(data);
+    return roomList;
   }
 
   // 建立會議室

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import axios from 'axios';
 
 export default defineStore('user', () => {
   // 使用者名稱
@@ -10,7 +11,8 @@ export default defineStore('user', () => {
   // 登入
   async function login() {
     // POST /api/admin/login
-    console.log('login');
+    const data: any = await axios.post('/api/admin/login');
+    console.log(data);
   }
 
   // 註冊

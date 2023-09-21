@@ -1,5 +1,5 @@
 import useUserStore from '@/stores/modules/user';
-import useRoomStateStore from '@/stores/modules/roomStateStore';
-import useRoomReserveStore from '@/stores/modules/roomReserveStore';
+import useRoomStateStore from '@/stores/modules/roomState';
+import useRoomReserveStore from '@/stores/modules/roomReserve';
 
 export { useUserStore, useRoomStateStore, useRoomReserveStore };

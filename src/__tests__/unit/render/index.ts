@@ -3,6 +3,7 @@ import { render } from '@testing-library/vue';
 import type { RenderOptions } from '@testing-library/vue/types';
 import { setActivePinia, createPinia } from 'pinia';
 import i18n from '@/plugins/i18n';
+import ElementPlus from 'element-plus';
 
 interface RenderComponentOptions extends RenderOptions {
   provide?: Record<any, any>;
@@ -18,7 +19,7 @@ export function renderComponent(testComponent: Component, options?: RenderCompon
   return render(testComponent, {
     ...componentOptions,
     global: {
-      plugins: [pinia, i18n],
+      plugins: [pinia, i18n, ElementPlus],
       provide,
     },
   });
