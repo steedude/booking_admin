@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import RoomRow from './RoomRow.vue';
+import RoomRow from './ManageRoomTable.vue';
 </script>
 
 <style scoped lang="postcss"></style>

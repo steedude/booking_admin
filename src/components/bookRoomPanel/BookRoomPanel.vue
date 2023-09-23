@@ -1,6 +1,6 @@
 <template>
-  <!-- 預約會議室的視窗 -->
-  <div>預約會議室的視窗</div>
+  <!-- 預約管理/新增預約的視窗(與前台共用) -->
+  <div>預約管理/新增預約的視窗(與前台共用)</div>
 </template>
 
 <script setup lang="ts"></script>

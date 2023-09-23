@@ -1,4 +1,10 @@
-# Vue3 Coding Standards
+# Vue後台前端
+
+## 架構圖
+
+<https://cacoo.com/diagrams/82xaZglNdHwM5MB7/3FD9B>
+
+<img src="./docs/img/vue-booking-admin-structure-diagram.png" alt="image_name png" />
 
 ## Features
 
@@ -43,9 +49,6 @@
   - release please action
   - Automated unit tests
   - Automated e2e tests
-  <!-- - GitLab CI
-  - Automated e2e tests
-  - Automated component tests -->
 
 ## Project Files
 

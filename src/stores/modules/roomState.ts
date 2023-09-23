@@ -14,29 +14,8 @@ export default defineStore('roomState', () => {
     return roomList;
   }
 
-  // 建立會議室
-  async function createNewRoom() {
-    // POST /api/admin/product
-    console.log('createNewRoom');
-  }
-
-  // 更新會議室資訊
-  async function updateRoomInfo() {
-    // PUT /api/admin/product/:product_id
-    console.log('updateRoomInfo');
-  }
-
-  // 刪除會議室
-  async function deleteRoom() {
-    // DELETE /api/admin/product/:product_id
-    console.log('deleteRoom');
-  }
-
   return {
     roomList,
     getRoomList,
-    createNewRoom,
-    updateRoomInfo,
-    deleteRoom,
   };
 });

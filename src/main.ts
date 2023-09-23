@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'mockServiceWorker') {
 
 const pinia = createPinia();
 const app = createApp(App);
-
+console.log({ elementPlusPlugin });
 pinia.use(piniaPluginPersistedstate);
 app.use(pinia);
 app.use(router);

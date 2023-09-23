@@ -23,5 +23,23 @@
   },
   "files.associations": {},
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["dotenv", "vant"]
+  "cSpell.words": [
+    "axios",
+    "commitlint",
+    "Cssnano",
+    "dotenv",
+    "intlify",
+    "persistedstate",
+    "pinia",
+    "postcss",
+    "pxtorem",
+    "rushstack",
+    "tailwindcss",
+    "Unplugin",
+    "vant",
+    "vitejs",
+    "vitest",
+    "ts-nocheck",
+    "arrowParens"
+  ]
 }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import LoginPage from '@/pages/LoginPage.vue';
 import ManagePage from '@/pages/ManagePage.vue';
 import ReservePage from '@/pages/ReservePage.vue';
 
@@ -6,6 +7,14 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/:catchAll(.*)',
     redirect: '/managePage',
+  },
+  {
+    path: '/login',
+    name: 'LoginPage',
+    component: LoginPage,
+    meta: {
+      title: 'LoginPage',
+    },
   },
   {
     path: '/managePage',

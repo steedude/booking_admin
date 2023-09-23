@@ -4,8 +4,9 @@
 
 <script setup lang="ts">
 import { useRoomReserveStore } from '@/stores';
-const list = useRoomReserveStore().getReservations();
-console.log(list);
+
+const { data } = await useRoomReserveStore().fetchReservations();
+console.log(data);
 </script>
 
 <style scoped lang="postcss"></style>

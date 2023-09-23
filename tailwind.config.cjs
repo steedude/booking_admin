@@ -8,9 +8,6 @@ module.exports = {
     screens: {
       ...defaultTheme.screens,
     },
-    // fontFamily: {
-    //   sans: ["Monda", "Noto Sans TC", "sans-serif"],
-    // },
     extend: {
       colors: {
         primary: '',
