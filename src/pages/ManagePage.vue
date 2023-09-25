@@ -3,9 +3,15 @@
 </template>
 
 <script setup lang="ts">
-import { useRoomStateStore } from '@/stores';
-const list = useRoomStateStore().getRoomList();
-console.log(list);
+import { onUnmounted } from 'vue';
+import { getRoomListApi } from '@/apis/manage';
+
+async function getRoomList() {
+  const list = await getRoomListApi();
+  console.log(list);
+}
+
+onUnmounted(getRoomList);
 </script>
 
 <style scoped lang="postcss"></style>

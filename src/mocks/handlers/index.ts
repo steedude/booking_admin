@@ -12,7 +12,7 @@ export const handlers = [
   }),
 
   rest.get('/api/admin/reservations', (req, res, ctx) => {
-    // 模擬取得所有會議室資訊
+    // 模擬取得所有管理資訊
     return res(ctx.status(200), ctx.json({ message: 'success' }));
   }),
 ];

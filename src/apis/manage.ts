@@ -1,17 +1,17 @@
 import request from '@/utils/request';
 
-export function getRoomList() {
+export function getRoomListApi() {
   return request.get('/api/admin/products');
 }
 
-export function createNewRoom() {
+export function createNewRoomApi() {
   return request.post('/api/admin/product');
 }
 
-export function updateRoomInfo() {
+export function updateRoomInfoApi() {
   return request.put('/api/admin/product/:product_id');
 }
 
-export function deleteRoom() {
+export function deleteRoomApi() {
   return request.delete('/api/admin/product/:product_id');
 }

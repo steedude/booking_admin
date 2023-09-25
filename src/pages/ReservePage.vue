@@ -3,10 +3,15 @@
 </template>
 
 <script setup lang="ts">
-import { useRoomReserveStore } from '@/stores';
+import { onUnmounted } from 'vue';
+import { getReservationsApi } from '@/apis/reserve';
 
-const { data } = await useRoomReserveStore().fetchReservations();
-console.log(data);
+async function getReservations() {
+  const list = await getReservationsApi();
+  console.log(list);
+}
+
+onUnmounted(getReservations);
 </script>
 
 <style scoped lang="postcss"></style>

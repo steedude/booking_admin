@@ -1,17 +1,17 @@
 import request from '@/utils/request';
 
-export function getReservations() {
+export function getReservationsApi() {
   return request.get('/api/admin/reservations');
 }
 
-export function cancelReservation() {
+export function cancelReservationApi() {
   return request.delete('/api/admin/reservation/:reservation_id');
 }
 
-export function confirmReservation() {
+export function confirmReservationApi() {
   return request.put('/api/admin/reservation/:reservation_id');
 }
 
-export function sendReservation() {
+export function sendReservationApi() {
   return request.post('/api/admin/reservation');
 }
