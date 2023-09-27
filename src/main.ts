@@ -9,6 +9,7 @@ import App from './App.vue';
 import router from '@/router';
 import elementPlusPlugin from '@/plugins/elementPlus';
 import i18NPlugin from '@/plugins/i18n';
+import { vue3GooglePlugin, vue3GoogleInstallOptions } from '@/plugins/vue3GoogleLogin';
 
 if (process.env.NODE_ENV === 'mockServiceWorker') {
   const { worker } = await import('@/mocks/browser');
@@ -24,4 +25,6 @@ app.use(pinia);
 app.use(router);
 app.use(elementPlusPlugin);
 app.use(i18NPlugin);
+app.use(vue3GooglePlugin, vue3GoogleInstallOptions);
+
 app.mount('#app');

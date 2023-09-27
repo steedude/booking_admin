@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/vue';
-import SearchBar from '@/components/indexItems/SearchBar.vue';
+import SearchBar from '@/components/reservePage/SearchBar.vue';
 import { renderComponent } from '@/__tests__/unit/render';
 
 describe('HelloWorld component', () => {

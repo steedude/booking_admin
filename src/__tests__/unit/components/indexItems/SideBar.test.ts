@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/vue';
-import SideBar from '@/components/indexItems/SideBar.vue';
+import SideBar from '@/components/common/SideBar.vue';
 import { renderComponent } from '@/__tests__/unit/render';
 
 describe('HelloWorld component', () => {
