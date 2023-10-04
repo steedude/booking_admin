@@ -1,16 +1,9 @@
 <template>
-  <div class="flex h-screen w-screen">
-    <SideBar />
-    <BreadcrumbBar />
+  <div>
     <router-view />
-    <PaginationBar />
   </div>
 </template>
 
-<script setup lang="ts">
-import SideBar from '@/components/common/SideBar.vue';
-import BreadcrumbBar from '@/components/common/BreadcrumbBar.vue';
-import PaginationBar from '@/components/common/PaginationBar.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

@@ -25,6 +25,7 @@ module.exports = {
     'comma-dangle': ['error', 'only-multiline'],
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '_' }],
+    'max-len': ['error', { code: 120 }],
   },
   overrides: [
     {

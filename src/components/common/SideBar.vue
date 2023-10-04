@@ -6,7 +6,7 @@
   >
     <el-menu-item
       index="1"
-      :route="{ name: 'ManagePage' }"
+      :route="{ name: 'managePage' }"
     >
       <el-icon><document /></el-icon>
       <span>會議室管理</span>
