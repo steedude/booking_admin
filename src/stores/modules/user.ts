@@ -2,6 +2,9 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { googleAuthApi, loginApi, logoutApi } from '@/apis/login';
 import { LoginPayload, GoogleAuthPayload } from '@/types/user';
+
+const tokenKey = import.meta.env.VITE_TOKEN_LOCAL_STORAGE_KEY;
+
 export default defineStore(
   'user',
   () => {
@@ -10,16 +13,16 @@ export default defineStore(
     const team = ref('');
 
     function setToken(tokenStr: string) {
-      localStorage.setItem('booking_fe_token', tokenStr);
+      localStorage.setItem(tokenKey, tokenStr);
     }
 
     function getToken() {
-      return localStorage.getItem('booking_fe_token');
+      return localStorage.getItem(tokenKey);
     }
 
     async function logoutUser() {
       await logoutApi();
-      localStorage.removeItem('booking_fe_token');
+      localStorage.removeItem(tokenKey);
       name.value = '';
       account.value = '';
       team.value = '';

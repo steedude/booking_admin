@@ -1,18 +1,19 @@
 import request from '@/utils/request';
 import type { LoginPayload, GoogleAuthPayload } from '@/types/user';
+import { apiPrefix } from '@/utils/constant';
 
 export function loginApi(data: LoginPayload) {
-  return request.post('/api/admin/login', data);
+  return request.post(`${apiPrefix}/login`, data);
 }
 
 export function registerApi() {
-  return request.post('/api/admin/register');
+  return request.post(`${apiPrefix}/register`);
 }
 
 export function googleAuthApi(data: GoogleAuthPayload) {
-  return request.post('/api/admin/google-auth', data);
+  return request.post(`${apiPrefix}/googleAuth`, data);
 }
 
 export function logoutApi() {
-  return request.get('/api/admin/logout');
+  return request.post(`${apiPrefix}/logout`);
 }
