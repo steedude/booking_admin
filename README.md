@@ -103,3 +103,15 @@ src/
 ├── vite-env.d.ts
 └── main.ts
 ```
+
+## Dockfile 說明
+
+docker build 指令 build image名稱為 booking-fe-admin-image
+```
+docker build -t booking-fe-admin-image .
+```
+
+執行 booking-fe-admin-image run 在 8080 port
+```
+docker run --rm -it -p 8080:80 booking-fe-admin-image
+```

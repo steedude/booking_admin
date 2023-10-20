@@ -10,8 +10,8 @@ const MOCK_USER_INFO = {
 
 const mockUserApi = {
   loginUser: rest.post('*/login', (req: MockedRequest<LoginPayload>, res, ctx) => {
-    const { username, password } = req.body;
-    const isCorrectMockAccount = username === MOCK_USER_INFO.ACCOUNT || username === MOCK_USER_INFO.NAME;
+    const { account, password } = req.body;
+    const isCorrectMockAccount = account === MOCK_USER_INFO.ACCOUNT || account === MOCK_USER_INFO.NAME;
     const isAuthenticated = isCorrectMockAccount && password === MOCK_USER_INFO.PWD;
     if (!isAuthenticated) {
       return res(

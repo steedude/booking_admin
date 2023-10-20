@@ -6,8 +6,8 @@ export function loginApi(data: LoginPayload) {
   return request.post(`${apiPrefix}/login`, data);
 }
 
-export function registerApi() {
-  return request.post(`${apiPrefix}/register`);
+export function registerApi(data: LoginPayload) {
+  return request.post(`${apiPrefix}/register`, data);
 }
 
 export function googleAuthApi(data: GoogleAuthPayload) {

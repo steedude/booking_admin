@@ -12,10 +12,10 @@
         label-width="120px"
       >
         <el-form-item
-          label="Username"
-          prop="username"
+          label="account"
+          prop="account"
         >
-          <el-input v-model="ruleForm.username" />
+          <el-input v-model="ruleForm.account" />
         </el-form-item>
 
         <el-form-item
@@ -76,12 +76,12 @@ const ruleFormRef = ref<FormInstance>();
 const emit = defineEmits(['login', 'register']);
 
 const ruleForm = reactive({
-  username: '',
+  account: '',
   password: '',
   checkPass: '',
 });
 
-const validatePass = (rule: any, value: any, callback: any) => {
+const validatePass = (_: any, value: any, callback: any) => {
   if (value === '') {
     callback(new Error('Please input the password again'));
   } else if (value !== ruleForm.password) {
@@ -92,8 +92,8 @@ const validatePass = (rule: any, value: any, callback: any) => {
 };
 
 const rules = reactive<FormRules<typeof ruleForm>>({
-  username: [
-    { required: true, message: 'Please input the username', trigger: 'blur' },
+  account: [
+    { required: true, message: 'Please input the account', trigger: 'blur' },
     {
       min: 6,
       max: 26,

@@ -8,6 +8,6 @@ export interface GoogleAuthPayload {
 }
 
 export interface LoginPayload {
-  username: string;
+  account: string;
   password: string;
 }

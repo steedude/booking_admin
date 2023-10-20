@@ -52,7 +52,7 @@ const router = createRouter({
 });
 
 // 全局路由守衛 攔截所有路由
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   // 取得token
   const { getToken } = useUserStore();
   const token = getToken();

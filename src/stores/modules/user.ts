@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import { googleAuthApi, loginApi, logoutApi } from '@/apis/login';
+import { googleAuthApi, loginApi, logoutApi, registerApi } from '@/apis/login';
 import { LoginPayload, GoogleAuthPayload } from '@/types/user';
 
 const tokenKey = import.meta.env.VITE_TOKEN_LOCAL_STORAGE_KEY;
@@ -34,7 +34,6 @@ export default defineStore(
       setToken(token);
       name.value = user.name;
       account.value = user.account;
-      team.value = user.team;
     }
 
     async function loginUser(data: LoginPayload) {
@@ -43,7 +42,14 @@ export default defineStore(
       setToken(token);
       name.value = user.name;
       account.value = user.account;
-      team.value = user.team;
+    }
+
+    async function registerUser(data: LoginPayload) {
+      const res = await registerApi(data);
+      const { token, user } = res.data;
+      setToken(token);
+      name.value = user.name;
+      account.value = user.account;
     }
 
     return {
@@ -52,6 +58,7 @@ export default defineStore(
       team,
       getToken,
       loginUser,
+      registerUser,
       logoutUser,
       loginUserByGoogle,
     };

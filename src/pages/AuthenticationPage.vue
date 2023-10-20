@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center items-center">
-    <div class="my-10 text-4xl">Admin預約管理系統</div>
+    <div class="my-10 text-4xl">Admin預約管理系統 {{ envTest }}</div>
 
     <el-tabs type="border-card">
       <el-tab-pane label="Login">
@@ -30,9 +30,11 @@
 import { ElMessage, ElNotification } from 'element-plus';
 import AuthForm from '@/components/authPage/AuthForm.vue';
 import { useUserStore } from '@/stores';
-const { loginUser, loginUserByGoogle } = useUserStore();
+const { loginUser, registerUser, loginUserByGoogle } = useUserStore();
 import { LoginPayload } from '@/types/user';
 import router from '@/router';
+import { computed } from 'vue';
+
 async function onLogin(formData: LoginPayload) {
   try {
     await loginUser(formData);
@@ -53,7 +55,7 @@ async function onLogin(formData: LoginPayload) {
 
 async function onRegister(formData: LoginPayload) {
   try {
-    await loginUser(formData);
+    await registerUser(formData);
     await router.push('/');
   } catch (error: any) {
     const message = error?.response.data.errorMessage || '認證錯誤';
@@ -80,6 +82,10 @@ const callback = async (response: any) => {
     });
   }
 };
+
+const envTest = computed(() => {
+  return import.meta.env.VITE_ENV_TEST;
+});
 </script>
 
 <style scoped lang="postcss"></style>
