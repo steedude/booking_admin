@@ -92,7 +92,7 @@ const mockProductApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
         data: {
           products: meetingRooms,
@@ -110,7 +110,7 @@ const mockProductApi = {
       return res(
         ctx.status(404),
         ctx.json({
-          code: 404,
+          status: 404,
           message: 'Not found',
         }),
       );
@@ -118,7 +118,7 @@ const mockProductApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
         data: product,
       }),
@@ -143,7 +143,7 @@ const mockProductApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
       }),
     );
@@ -161,7 +161,7 @@ const mockProductApi = {
         return res(
           ctx.status(404),
           ctx.json({
-            code: 404,
+            status: 404,
             message: 'Not found',
           }),
         );
@@ -170,6 +170,7 @@ const mockProductApi = {
       meetingRooms.forEach((room, index) => {
         // eslint-disable-next-line no-underscore-dangle
         if (room._id === productId) {
+          // eslint-disable-next-line security/detect-object-injection
           meetingRooms[index] = {
             _id: productId as string,
             name,
@@ -187,7 +188,7 @@ const mockProductApi = {
       return res(
         ctx.status(200),
         ctx.json({
-          code: 0,
+          status: 200,
           message: 'success',
         }),
       );
@@ -201,7 +202,7 @@ const mockProductApi = {
       return res(
         ctx.status(404),
         ctx.json({
-          code: 404,
+          status: 404,
           message: 'Not found',
         }),
       );
@@ -211,7 +212,7 @@ const mockProductApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
       }),
     );

@@ -58,25 +58,25 @@
       <el-button
         type="primary"
         @click="store.getReservationsList(searchState)"
-        >Query</el-button
+        >查詢</el-button
       >
       <el-button
-        type="primary"
+        button="primary"
         @click="store.filterReservationDay(-1)"
         >昨日</el-button
       >
       <el-button
-        type="primary"
+        button="primary"
         @click="store.filterReservationDay(0)"
         >今日</el-button
       >
       <el-button
-        type="primary"
+        button="primary"
         @click="store.filterReservationDay(-7)"
         >一週</el-button
       >
       <el-button
-        type="primary"
+        button="primary"
         @click="store.filterReservationDay(-30)"
         >一月</el-button
       >

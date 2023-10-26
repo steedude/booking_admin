@@ -18,7 +18,7 @@
       background
       class="flex justify-center"
       layout="total, sizes, prev, pager, next"
-      :page-sizes="[1, 2, 3, 4, 10]"
+      :page-sizes="[5, 10]"
       :total="totalSize"
       @size-change="onSizeChange"
       @current-change="store.getReservationsList(searchState)"

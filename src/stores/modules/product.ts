@@ -15,7 +15,7 @@ export default defineStore('product', () => {
   const products = ref<Product[]>();
 
   function showMessage(res: any) {
-    if (res.code === 0) {
+    if (res.status === 200) {
       ElMessage.success(res.message);
     } else {
       ElMessage.error(res.message);

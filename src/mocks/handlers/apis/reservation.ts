@@ -62,7 +62,7 @@ const reservations: Reservation[] = [
     team: 'vue',
   },
 ];
-for (let i = 0; i < 101; i += 1) {
+for (let i = 0; i < 16; i += 1) {
   reservations.push({
     _id: `r${i + 1}`,
     start_time: `${currentDay} 09:30`,
@@ -102,17 +102,15 @@ const reservationsByDay: ReservationByDay[] = [
 const mockReservationsApi = {
   getReservations: rest.get('*/reservations', (req, res, ctx) => {
     const params = Object.fromEntries(req.url.searchParams);
-    console.log('getReservations', params);
 
     const startRecord = (Number(params.page) - 1) * Number(params.page_size);
     const reservs = reservations.slice(startRecord, startRecord + Number(params.page_size));
-    console.log('params', startRecord, Number(params.page_size), reservs, reservations);
     const totalPage = Math.ceil(reservations.length / Number(params.page_size));
 
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
         data: {
           page: Number(params.page),
@@ -131,7 +129,7 @@ const mockReservationsApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
         data: {
           reservationsByDay,
@@ -166,7 +164,7 @@ const mockReservationsApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
       }),
     );
@@ -181,7 +179,7 @@ const mockReservationsApi = {
       return res(
         ctx.status(404),
         ctx.json({
-          code: 404,
+          status: 404,
           message: 'Not found',
         }),
       );
@@ -191,7 +189,7 @@ const mockReservationsApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
       }),
     );
@@ -207,7 +205,7 @@ const mockReservationsApi = {
       return res(
         ctx.status(404),
         ctx.json({
-          code: 404,
+          status: 404,
           message: 'Not found',
         }),
       );
@@ -223,7 +221,7 @@ const mockReservationsApi = {
     return res(
       ctx.status(200),
       ctx.json({
-        code: 0,
+        status: 200,
         message: 'success',
       }),
     );

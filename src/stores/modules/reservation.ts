@@ -38,7 +38,7 @@ export default defineStore('reservation', () => {
   });
 
   function showMessage(res: any) {
-    if (res.code === 0) {
+    if (res.status === 200) {
       ElMessage.success(res.message);
     } else {
       ElMessage.error(res.message);
@@ -75,18 +75,18 @@ export default defineStore('reservation', () => {
   async function postReservation(data: PostReservationPayload) {
     const res = await postReservationApi(data);
     showMessage(res);
-    getReservationsList(searchState.value);
+    await getReservationsList(searchState.value);
   }
   async function cancelReservation(reservationId: string) {
     const res = await cancelReservationApi(reservationId);
     showMessage(res);
-    getReservationsList(searchState.value);
+    await getReservationsList(searchState.value);
   }
 
   async function approveReservation(reservationId: string) {
     const res = await approveReservationApi(reservationId);
     showMessage(res);
-    getReservationsList(searchState.value);
+    await getReservationsList(searchState.value);
   }
 
   onBeforeMount(async () => {

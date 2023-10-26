@@ -3,15 +3,16 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import DashboardLayout from '@/components/layout/DashboardLayout.vue';
 
 import AuthenticationPage from '@/pages/AuthenticationPage.vue';
-import ManagePage from '@/pages/ManagePage.vue';
-import ReservePage from '@/pages/ReservePage.vue';
+import ProductManagePage from '@/pages/ProductManagePage.vue';
+import ReserveManagePage from '@/pages/ReserveManagePage.vue';
+import TeamManagePage from '@/pages/TeamManagePage.vue';
 
 import { useUserStore } from '@/stores';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:catchAll(.*)',
-    redirect: '/managePage',
+    redirect: '/reserve-manage',
   },
   {
     path: '/auth',
@@ -24,22 +25,32 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/managePage',
+    redirect: '/reserve-manage',
     children: [
       {
-        path: '/managePage',
-        name: 'managePage',
-        component: ManagePage,
+        path: '/reserve-manage',
+        component: ReserveManagePage,
+        name: 'reserveManage',
+        meta: {
+          title: '預約管理',
+        },
+      },
+
+      {
+        path: '/product-manage',
+        name: 'productManage',
+        component: ProductManagePage,
         meta: {
           title: '會議室管理',
         },
       },
+
       {
-        path: '/reservePage',
-        component: ReservePage,
-        name: 'reservePage',
+        path: '/team-manage',
+        component: TeamManagePage,
+        name: 'teamManage',
         meta: {
-          title: '預約管理',
+          title: '團隊管理',
         },
       },
     ],
