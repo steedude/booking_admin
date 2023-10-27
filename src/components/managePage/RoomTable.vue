@@ -59,8 +59,14 @@
       min-width="100"
     >
       <template #default="scope">
-        <el-button @click="emit('edit', scope.row)">修改</el-button>
         <el-button
+          link
+          type="primary"
+          @click="emit('edit', scope.row)"
+          >修改</el-button
+        >
+        <el-button
+          link
           type="danger"
           @click="emit('delete', scope.row._id)"
           >刪除</el-button

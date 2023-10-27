@@ -37,7 +37,7 @@
             :on-remove="handleRemove"
             :on-exceed="handleExceed"
           >
-            <el-icon><Plus /></el-icon>
+            <el-icon><plus /></el-icon>
           </el-upload>
 
           <el-dialog v-model="previewImageVisible">
@@ -119,7 +119,7 @@ import { computed } from 'vue';
 import { reactive } from 'vue';
 import { onMounted, ref } from 'vue';
 import { useProductStore } from '@/stores';
-
+import { Plus } from '@element-plus/icons-vue';
 const store = useProductStore();
 const formRef = ref<FormInstance>();
 const formLabelWidth = '140px';
@@ -170,7 +170,8 @@ const previewImageUrl = ref('');
 const previewImageVisible = ref(false);
 
 const handleRemove: UploadProps['onRemove'] = (uploadFile, uploadFiles) => {
-  console.log(uploadFile, uploadFiles);
+  console.log('handleRemove', uploadFile, uploadFiles);
+  formData.image = uploadFiles.map(file => file.url);
 };
 
 const handlePictureCardPreview: UploadProps['onPreview'] = uploadFile => {
@@ -214,7 +215,6 @@ function setDialogVisible(isCreate: boolean, options?: any) {
         }));
       }
     });
-    console.log('formData', formData);
   } else {
     resetForm();
   }
@@ -243,7 +243,7 @@ const onValidate = async (formEl: FormInstance | undefined) => {
       handleConfirm();
       return true;
     }
-    ElMessage.error('eroor submit!');
+    ElMessage.error('error submit!');
     return false;
   });
 };

@@ -5,10 +5,6 @@ export function getProductListApi() {
   return request.get('/api/admin/products');
 }
 
-export function getProductApi(productId: string) {
-  return request.get(`/api/admin/product/${productId}`);
-}
-
 export function createNewProductApi(data: CreateProductPayload) {
   return request.post('/api/admin/product', data);
 }
