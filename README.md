@@ -26,10 +26,6 @@
 - Eslint
   - [config airbnb](https://www.npmjs.com/package/eslint-config-airbnb-base)
 - Prettier
-- [Husky](https://www.npmjs.com/package/husky) to improves commits
-  - if encounter npx: command not found, can execute `ln -s $(which npx) /usr/local/bin/npx` in zsh
-  - [commitlint](https://commitlint.js.org/#/) checks if your commit messages meet the conventional commit format
-  - [lint-staged](https://github.com/okonet/lint-staged) filter files checked by pre commit lint
 - Alias `@` to `<project_root>/src`
 - UI Library use [Element Plus](https://element-plus.org/#/en-US)
 - Mock use [msw](https://mswjs.io/)
@@ -107,11 +103,13 @@ src/
 ## Dockfile 說明
 
 docker build 指令 build image名稱為 booking-fe-admin-image
+
 ```
 docker build -t booking-fe-admin-image .
 ```
 
 執行 booking-fe-admin-image run 在 8080 port
+
 ```
 docker run --rm -it -p 8080:80 booking-fe-admin-image
 ```
