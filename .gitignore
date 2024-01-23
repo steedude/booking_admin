@@ -28,6 +28,7 @@ dist-ssr
 
 # Component auto import
 /src/components.d.ts
+auto-imports.d.ts
 
 # Test reports
 coverage
