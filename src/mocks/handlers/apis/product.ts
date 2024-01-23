@@ -88,7 +88,7 @@ const findMeetingRoomIndex = (id: string) => {
 };
 
 const mockProductApi = {
-  getProductList: rest.get('*/products', (req, res, ctx) => {
+  getProductList: rest.get('*/products', (_, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
