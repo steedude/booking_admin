@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '_' }],
     'max-len': ['error', { code: 120 }],
+    'linebreak-style': 0,
   },
   overrides: [
     {
