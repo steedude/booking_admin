@@ -11,7 +11,7 @@ declare module 'axios' {
   export interface AxiosResponse extends ResponseResult {}
 }
 
-const baseURL = import.meta.env.VITE_API_URL;
+const baseURL = import.meta.env.VITE_API_URL || process.env.API_URL;
 const axiosInstance = axios.create({ baseURL });
 
 axiosInstance.interceptors.request.use(
