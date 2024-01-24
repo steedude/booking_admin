@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { googleAuthApi, loginApi, logoutApi, registerApi } from '@/apis/login';
 import { LoginPayload, GoogleAuthPayload } from '@/types/user';
 
-const tokenKey = import.meta.env.VITE_TOKEN_LOCAL_STORAGE_KEY || process.env.TOKEN_LOCAL_STORAGE_KEY;
+const tokenKey = import.meta.env.VITE_TOKEN_LOCAL_STORAGE_KEY;
 
 export default defineStore(
   'user',
