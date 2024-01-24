@@ -84,7 +84,7 @@ const callback = async (response: any) => {
 };
 
 const envTest = computed(() => {
-  return import.meta.env.VITE_ENV_TEST;
+  return import.meta.env.VITE_ENV;
 });
 </script>
 
